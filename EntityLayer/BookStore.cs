@@ -24,6 +24,7 @@ namespace EntityLayer
         //year must be between 2000 -2019
         public int PYear { get; set; }
 
+       //price must be greater than 100
         public decimal BookPrice { get; set; }
 
         public string Category { get; set; }
