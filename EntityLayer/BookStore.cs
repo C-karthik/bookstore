@@ -20,6 +20,7 @@ namespace EntityLayer
         public string AuthorlastName { get; set; }
 
         public string Gender { get; set; }
+        
         public int PYear { get; set; }
 
         public decimal BookPrice { get; set; }
