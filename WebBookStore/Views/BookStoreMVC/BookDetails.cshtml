@@ -1,0 +1,49 @@
+﻿@model IEnumerable<WebBookStore.Models.BookStoreModel>
+
+@{
+    ViewBag.Title = "BookDetails";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<h2>BookDetails</h2>
+
+<link href="~/StyleSheet/Display.css" rel="stylesheet" />
+<form action="AddFavBook" method="post">
+
+    <table id="customers">
+        <tr>
+
+            <th>BookId</th>
+            <th>BookName</th>
+            <th>AuthorFirstName</th>
+            <th>AuthorLastName</th>
+            <th>AuthorGender</th>
+            <th>PublishYear</th>
+            <th>BookPrice</th>
+            <th>Category</th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+
+            <tr>
+                <td>@item.BookId</td>
+                <td>@item.BookName</td>
+                <td>@item.AuthorFirsttName</td>
+                <td>@item.AuthorlastName</td>
+                <td>@item.Gender</td>
+                <td>@item.PYear</td>
+                <td>@item.BookPrice</td>
+                <td>@item.Category</td>
+                <td>
+                    <input type="checkbox" name="id" value="@item.BookId" />
+                </td>
+            </tr>
+        }
+    </table>
+    <br />
+    <br />
+    <button type="submit" value="submit" style="float:right">Add Book</button>
+    <h4 style="color:red">@TempData["message"]</h4>
+</form>
